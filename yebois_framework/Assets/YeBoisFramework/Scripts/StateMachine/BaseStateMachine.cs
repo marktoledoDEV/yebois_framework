@@ -8,12 +8,8 @@ using UnityEngine;
 namespace YeBoisFramework.StateMachine
 {
 	[RequireComponent(typeof(Animator))]
-	public abstract class StateMachine<tState> : MonoBehaviour where tState : State
+	public abstract class BaseStateMachine : MonoBehaviour
 	{
-		#region Properties and Fields
-		protected Dictionary<string,tState> stateDictionary = new Dictionary<string, tState>();
-		#endregion
-
 		#region Components
 		private Animator smAnimator;
 		#endregion
