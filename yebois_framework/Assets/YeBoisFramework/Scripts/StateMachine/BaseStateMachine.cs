@@ -26,7 +26,7 @@ namespace YeBoisFramework.StateMachine
 		//Will bind any states from the animator together to make it easily accessible to the state machine
 		protected abstract void InitializeStates();
 		//Will be called in a statemachine controller to refresh the statemachine
-		protected abstract void RefreshStateMachine();
+		public abstract void RefreshStateMachine(int trigger);
 		#endregion
 	}
 }

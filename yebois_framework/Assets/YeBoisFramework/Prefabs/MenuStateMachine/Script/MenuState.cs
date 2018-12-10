@@ -22,6 +22,7 @@ namespace YeBoisFramework.UI
 		{
 			menuStateMachine = animator.gameObject.GetComponent<MenuStateMachine>();
 			if(menuStateMachine == null) { Debug.LogError("MenuStateMachine Does Not Exist"); }
+			else { menuStateMachine.RefreshStateMachine((int) menuName); }
 		}
 		#endregion
 	}

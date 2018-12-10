@@ -11,27 +11,29 @@ namespace YeBoisFramework.UI
 	public class MenuCanvasGroup : MonoBehaviour 
 	{
 		#region Properties and Fields
+		public MenuStateName stateName;
+		#endregion
+
+		#region Components
+		public CanvasGroup canvasGroup;
 		#endregion
 
 		#region Unity Methods
-		private void OnEnable()
+		private void Awake()
 		{
-			OnStateEnter();
+			canvasGroup = GetComponent<CanvasGroup>();
 		}
+
 		private void Update()
 		{
 			OnStateUpdate();
 		}
-		private void OnDisable()
-		{
-			OnStateExit();
-		}
 		#endregion
 
 		#region Custom Methods
-		protected virtual void OnStateEnter() { }
+		public virtual void OnStateEnter() { }
 		protected virtual void OnStateUpdate() { }
-		protected virtual void OnStateExit() { }
+		public virtual void OnStateExit() { }
 		#endregion
 	}
 }
