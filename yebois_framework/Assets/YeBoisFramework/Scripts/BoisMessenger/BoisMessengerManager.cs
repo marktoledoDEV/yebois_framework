@@ -6,7 +6,7 @@ namespace YeBoisFramework.BoisMessaging
 {
     public class BoisMessagerManager
     {
-        //Singleton Initialization and Setup
+        //Singleton Initialization and Setup //[TODO] Make a ServceLocator
         private static BoisMessagerManager boisInstance = null;
         public static BoisMessagerManager Instance
         {

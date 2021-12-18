@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace YeBoisFramework.BoisMessaging
 {
+    //[TODO] RENAME CLASS TO AbstractMonoBoisComponent
     public abstract class MonoBois : MonoBehaviour
     {
         private BoisMessenger messenger;
