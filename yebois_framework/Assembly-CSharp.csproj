@@ -42,8 +42,10 @@
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\State.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\BaseStateMachine.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessengerManager.cs" />
-     <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\MonoBois.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\AbstractMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleOutputMonoBoisComponent.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleInputMonoBoisComponent.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

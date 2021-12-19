@@ -64,6 +64,10 @@ namespace YeBoisFramework.BoisMessaging
 
         public void SendMessage(string msg, GameObject go, object parameters = null)
         {
+            if(go == null){
+                Debug.LogError("Target Game Object is Null!");
+            }
+
             if (CachedBoisMessengers.ContainsKey(go))
             {
                 BoisMessenger[] messengers = CachedBoisMessengers[go].ToArray();
