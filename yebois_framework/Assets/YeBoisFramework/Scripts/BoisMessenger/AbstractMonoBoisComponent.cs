@@ -4,19 +4,13 @@ using UnityEngine;
 
 namespace YeBoisFramework.BoisMessaging
 {
-    public abstract class AbstractMonoBoisComponent : MonoBehaviour
+    public abstract class AbstractMonoBoisComponent : MonoBehaviour, IBoisListener
     {
-        private BoisMessenger messenger;
-
-        public GameObject BoisListener;
+        protected BoisMessenger messenger;
 
         protected virtual void Awake()
         {
-            if(BoisListener == null)
-            {
-                BoisListener = gameObject;
-            }
-            messenger = new BoisMessenger(BoisListener);
+            messenger = new BoisMessenger(this);
         }
 
         public void CacheMethod(string msg, BoisMessenger.BoisMethod method)
@@ -27,6 +21,11 @@ namespace YeBoisFramework.BoisMessaging
         public void Call(string msg, GameObject targetGO, object parameters = null)
         {
             messenger.Call(msg, targetGO, parameters);
+        }
+
+        public void Call(string msg, IBoisListener listener, object parameters = null)
+        {
+            messenger.Call(msg, listener, parameters);
         }
 
         public void Broadcast(string msg, object parameters = null)

@@ -38,14 +38,18 @@
   <ItemGroup>
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuCanvasGroup.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuState.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleOutputMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessenger.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\BoisButton.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\State.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\BaseStateMachine.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessengerManager.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\AbstractMonoBoisComponent.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\IBoisListener.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
-     <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleOutputMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleInputMonoBoisComponent.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\UI\BoisUIFlowController.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\UIStateChangeBoisButton.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -667,10 +671,6 @@
       <Project>{5e919895-0772-46e9-ef76-234bcc5fef16}</Project>
       <Name>UnityEngine.Purchasing.SecurityStub</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.Advertisements.csproj">
-      <Project>{b48e64cb-7f56-3024-a1e3-904ee5f86d75}</Project>
-      <Name>UnityEngine.Advertisements</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
       <Project>{1883eccf-20da-4e1f-57e0-2fa6a13ce843}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
@@ -735,10 +735,6 @@
       <Project>{cbf80c97-e7e5-dbca-7cbf-e5077e3831ee}</Project>
       <Name>UnityEditor.XR.LegacyInputHelpers</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.Monetization.csproj">
-      <Project>{c51efb57-e1bb-2a9e-a30d-49bbab85f719}</Project>
-      <Name>UnityEngine.Monetization</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.Purchasing.csproj">
       <Project>{3c1a7c70-1694-19b0-f574-8e0c2addb867}</Project>
       <Name>UnityEditor.Purchasing</Name>
@@ -746,10 +742,6 @@
     <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
       <Project>{f1ae39b4-8d71-bf78-2b16-46b4ae0aecfe}</Project>
       <Name>UnityEditor.SpatialTracking</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.Advertisements.Editor.csproj">
-      <Project>{367b1804-d3f5-ac8b-1926-241fcd8ff0fd}</Project>
-      <Name>UnityEngine.Advertisements.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

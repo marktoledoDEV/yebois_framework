@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!225 &478092356 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 225611944005577036, guid: a8abf341204cc3341947065fb73a675d,
-    type: 3}
-  m_PrefabInstance: {fileID: 575235192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,21 +213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114219095935379854, guid: a8abf341204cc3341947065fb73a675d,
-        type: 3}
-      propertyPath: canvasGroup
-      value: 
-      objectReference: {fileID: 1632711123}
-    - target: {fileID: 114422882307419932, guid: a8abf341204cc3341947065fb73a675d,
-        type: 3}
-      propertyPath: canvasGroup
-      value: 
-      objectReference: {fileID: 478092356}
-    - target: {fileID: 114748168083045740, guid: a8abf341204cc3341947065fb73a675d,
-        type: 3}
-      propertyPath: canvasGroup
-      value: 
-      objectReference: {fileID: 2095119198}
+    - target: {fileID: 1900818598176436, guid: a8abf341204cc3341947065fb73a675d, type: 3}
+      propertyPath: m_Name
+      value: Menu_UI
+      objectReference: {fileID: 0}
     - target: {fileID: 224562394142529208, guid: a8abf341204cc3341947065fb73a675d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -324,6 +307,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224562394142529208, guid: a8abf341204cc3341947065fb73a675d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224562394142529208, guid: a8abf341204cc3341947065fb73a675d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224562394142529208, guid: a8abf341204cc3341947065fb73a675d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8abf341204cc3341947065fb73a675d, type: 3}
 --- !u!1 &674814430
@@ -392,12 +390,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!225 &1632711123 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 225737421911467328, guid: a8abf341204cc3341947065fb73a675d,
-    type: 3}
-  m_PrefabInstance: {fileID: 575235192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1645734454
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212ceda8ea08e3a44b1712f28d1f947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoisListener: {fileID: 1645734454}
   mBoisMsg: broadcast
   mBroadcastMsg: 1
   mGOTarget: {fileID: 2137183037}
@@ -445,7 +436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212ceda8ea08e3a44b1712f28d1f947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoisListener: {fileID: 1645734454}
   mBoisMsg: call
   mBroadcastMsg: 0
   mGOTarget: {fileID: 2137183037}
@@ -525,12 +515,6 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
---- !u!225 &2095119198 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 225311360432694454, guid: a8abf341204cc3341947065fb73a675d,
-    type: 3}
-  m_PrefabInstance: {fileID: 575235192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137183037
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1b0a58a290b5243ad5a67f0db75b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoisListener: {fileID: 2137183037}
   mBoisMsg: broadcast
 --- !u!114 &2137183040
 MonoBehaviour:
@@ -589,5 +572,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1b0a58a290b5243ad5a67f0db75b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoisListener: {fileID: 2137183037}
   mBoisMsg: call

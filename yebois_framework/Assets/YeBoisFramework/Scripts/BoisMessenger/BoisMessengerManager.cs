@@ -23,54 +23,102 @@ namespace YeBoisFramework.BoisMessaging
 
         private BoisMessagerManager()
         {
-            CachedBoisMessengers = new Dictionary<GameObject, List<BoisMessenger>>();
+            CachedBoisMessengers = new Dictionary<IBoisListener, List<BoisMessenger>>();
         }
 
         //Properties and Fields
-        private Dictionary<GameObject, List<BoisMessenger>> CachedBoisMessengers;
+        private Dictionary<IBoisListener, List<BoisMessenger>> CachedBoisMessengers;
 
         //Methods
         public void AddBaseMessenger(GameObject go, BoisMessenger bois)
         {
-            if (!CachedBoisMessengers.ContainsKey(go))
+            if (go == null)
+            {
+                Debug.LogError("GAME OBJECT WAS NULL");
+                return;
+            }
+
+            IBoisListener listener = go.GetComponent<IBoisListener>();
+            if (listener == null)
+            {
+                Debug.LogError("listener not found on: " + go.name, go);
+                return;
+            }
+
+            AddBaseMessenger(listener, bois);
+        }
+
+        public void AddBaseMessenger(IBoisListener listener, BoisMessenger bois)
+        {
+            if (!CachedBoisMessengers.ContainsKey(listener))
             {
                 List<BoisMessenger> messengers = new List<BoisMessenger>();
                 messengers.Add(bois);
-                CachedBoisMessengers.Add(go, messengers);
+                CachedBoisMessengers.Add(listener, messengers);
             }
             else
             {
-                CachedBoisMessengers[go].Add(bois);
+                CachedBoisMessengers[listener].Add(bois);
             }
         }
 
         public void RemoveBaseMessenger(GameObject go, BoisMessenger bois)
         {
-            if (CachedBoisMessengers.ContainsKey(go))
+            if (go == null)
             {
-                if (CachedBoisMessengers[go] != null
-                || CachedBoisMessengers[go].Count > 0)
+                Debug.LogError("GAME OBJECT WAS NULL");
+                return;
+            }
+
+            IBoisListener listener = go.GetComponent<IBoisListener>();
+            if (listener == null)
+            {
+                Debug.LogError("listener not found on: " + go.name, go);
+                return;
+            }
+
+            RemoveBaseMessenger(listener, bois);
+        }
+        public void RemoveBaseMessenger(IBoisListener listener, BoisMessenger bois)
+        {
+            if (CachedBoisMessengers.ContainsKey(listener))
+            {
+                if (CachedBoisMessengers[listener] != null
+                || CachedBoisMessengers[listener].Count > 0)
                 {
-                    CachedBoisMessengers[go].Remove(bois);
+                    CachedBoisMessengers[listener].Remove(bois);
                 }
 
                 //if the list is empty remove the key and value from the dictionary
-                if (CachedBoisMessengers[go].Count == 0)
+                if (CachedBoisMessengers[listener].Count == 0)
                 {
-                    CachedBoisMessengers.Remove(go);
+                    CachedBoisMessengers.Remove(listener);
                 }
             }
         }
 
         public void SendMessage(string msg, GameObject go, object parameters = null)
         {
-            if(go == null){
+            if (go == null)
+            {
                 Debug.LogError("Target Game Object is Null!");
+                return;
             }
 
-            if (CachedBoisMessengers.ContainsKey(go))
+            IBoisListener listener = go.GetComponent<IBoisListener>();
+            if (listener == null)
             {
-                BoisMessenger[] messengers = CachedBoisMessengers[go].ToArray();
+                Debug.LogError("listener not found on: " + go.name, go);
+                return;
+            }
+
+            SendMessage(msg, listener, parameters);
+        }
+        public void SendMessage(string msg, IBoisListener listener, object parameters = null)
+        {
+            if (CachedBoisMessengers.ContainsKey(listener))
+            {
+                BoisMessenger[] messengers = CachedBoisMessengers[listener].ToArray();
                 for (int i = 0; i < messengers.Length; i++)
                 {
                     messengers[i].ReceiveMessage(msg, parameters);
@@ -80,7 +128,7 @@ namespace YeBoisFramework.BoisMessaging
 
         public void SendMessageToAll(string msg, object parameters = null)
         {
-            foreach (KeyValuePair<GameObject, List<BoisMessenger>> entry in CachedBoisMessengers)
+            foreach (KeyValuePair<IBoisListener, List<BoisMessenger>> entry in CachedBoisMessengers)
             {
                 BoisMessenger[] messengers = entry.Value.ToArray();
                 if (messengers != null && messengers.Length > 0)

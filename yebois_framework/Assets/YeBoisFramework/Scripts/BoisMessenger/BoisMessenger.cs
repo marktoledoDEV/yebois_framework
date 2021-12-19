@@ -8,26 +8,25 @@ namespace YeBoisFramework.BoisMessaging
     {
         public delegate void BoisMethod(object o = null);
 
-
-        private GameObject cachedGameObject;
+        private IBoisListener mCachedBoisListener;
         private Dictionary<string, BoisMethod> BoisMessageHandler = new Dictionary<string, BoisMethod>();
 
-        public BoisMessenger(GameObject go)
+        public BoisMessenger(IBoisListener listener)
         {
-            cachedGameObject = go;
-            BoisMessagerManager.Instance.AddBaseMessenger(cachedGameObject, this);
+            mCachedBoisListener = listener;
+            BoisMessagerManager.Instance.AddBaseMessenger(mCachedBoisListener, this);
         }
 
         ~BoisMessenger()
         {
-            BoisMessagerManager.Instance.RemoveBaseMessenger(cachedGameObject, this);
-            cachedGameObject = null;
+            BoisMessagerManager.Instance.RemoveBaseMessenger(mCachedBoisListener, this);
+            mCachedBoisListener = null;
             BoisMessageHandler = null;
         }
 
         public void CacheMethod(string msg, BoisMethod action)
         {
-            if(BoisMessageHandler.ContainsKey(msg))
+            if (BoisMessageHandler.ContainsKey(msg))
             {
                 BoisMessageHandler[msg] += action;
             }
@@ -35,6 +34,11 @@ namespace YeBoisFramework.BoisMessaging
             {
                 BoisMessageHandler.Add(msg, action);
             }
+        }
+
+        public void Call(string msg, IBoisListener listener, object parameters = null)
+        {
+            BoisMessagerManager.Instance.SendMessage(msg, listener, parameters);
         }
 
         public void Call(string msg, GameObject targetGO, object parameters = null)
@@ -49,9 +53,9 @@ namespace YeBoisFramework.BoisMessaging
 
         public void ReceiveMessage(string msg, object parameters = null)
         {
-            if(BoisMessageHandler.ContainsKey(msg))
+            if (BoisMessageHandler.ContainsKey(msg))
             {
-                if(BoisMessageHandler[msg] != null)
+                if (BoisMessageHandler[msg] != null)
                 {
                     BoisMessageHandler[msg](parameters);
                 }
