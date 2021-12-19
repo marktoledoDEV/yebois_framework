@@ -38,7 +38,6 @@
   <ItemGroup>
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuCanvasGroup.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuState.cs" />
-     <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleOutputMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessenger.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\BoisButton.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\State.cs" />
@@ -47,7 +46,6 @@
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\AbstractMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\IBoisListener.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
-     <Compile Include="Assets\YeBoisFramework\Scripts\Gameplay\ConsoleInputMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\UI\BoisUIFlowController.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\UIStateChangeBoisButton.cs" />
     <Reference Include="UnityEngine">
