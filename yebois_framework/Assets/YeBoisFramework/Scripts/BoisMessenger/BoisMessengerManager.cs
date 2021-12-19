@@ -1,27 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YeBoisFramework.Utility;
 
 namespace YeBoisFramework.BoisMessaging
 {
-    public class BoisMessagerManager
+    public class BoisMessagerManager : IService
     {
-        //Singleton Initialization and Setup //[TODO] Make a ServceLocator
-        private static BoisMessagerManager boisInstance = null;
-        public static BoisMessagerManager Instance
-        {
-            get
-            {
-                if (boisInstance == null)
-                {
-                    boisInstance = new BoisMessagerManager();
-                }
-                return boisInstance;
-            }
-            private set { boisInstance = value; }
-        }
-
-        private BoisMessagerManager()
+        public BoisMessagerManager()
         {
             CachedBoisMessengers = new Dictionary<IBoisListener, List<BoisMessenger>>();
         }
