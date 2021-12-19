@@ -66,8 +66,8 @@
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\Messaging\TcpListener.cs" />
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\Messaging\TcpClient.cs" />
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\Image.cs" />
-     <Compile Include="Packages\com.unity.ide.visualstudio\Editor\Solution.cs" />
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\ProjectGeneration\ProjectProperties.cs" />
+     <Compile Include="Packages\com.unity.ide.visualstudio\Editor\Solution.cs" />
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\ProjectGeneration\FileIOProvider.cs" />
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\ProjectGeneration\GUIDProvider.cs" />
      <Compile Include="Packages\com.unity.ide.visualstudio\Editor\Testing\TestStatusAdaptor.cs" />

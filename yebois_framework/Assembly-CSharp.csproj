@@ -37,17 +37,19 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuCanvasGroup.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\UIStateChangeBoisButton.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuState.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessenger.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\BoisButton.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\State.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\StateMachine\BaseStateMachine.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\UI\BoisUIFlowController.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\BoisMessengerManager.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\AbstractMonoBoisComponent.cs" />
      <Compile Include="Assets\YeBoisFramework\Scripts\BoisMessenger\IBoisListener.cs" />
      <Compile Include="Assets\YeBoisFramework\Prefabs\MenuStateMachine\Script\MenuStateMachine.cs" />
-     <Compile Include="Assets\YeBoisFramework\Scripts\UI\BoisUIFlowController.cs" />
-     <Compile Include="Assets\YeBoisFramework\Scripts\UI\Buttons\UIStateChangeBoisButton.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\Util\ServiceLocator.cs" />
+     <Compile Include="Assets\YeBoisFramework\Scripts\Util\DependencyContainer.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -270,9 +272,6 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
         <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
@@ -281,6 +280,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
         <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

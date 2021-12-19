@@ -153,8 +153,8 @@
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TrackGui\TimelineTrackBaseGUI.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Audio\AudioPlayableAssetEditor.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\EditorClip.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\treeview\Drawers\Layers\MarkersLayer.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Recording\TimelineRecording.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\treeview\Drawers\Layers\MarkersLayer.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\Modes\TimelineInactiveMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Recording\TimelineRecording_Monobehaviour.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\Drawers\TrackDrawer.cs" />
@@ -195,10 +195,10 @@
      <Compile Include="Packages\com.unity.timeline\Editor\Animation\ClipCurveEditor.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Actions\TimelineAction.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TimelineClipHandle.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\Actions\TrackActions.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Items\MarkerItem.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\CurvesOwner\CurvesOwnerInspectorHelper.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\AddDelete\AddDeleteItemModeMix.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\Actions\TrackActions.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\ItemGui\TimelineItemGUI.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineWindow.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Signals\SignalAssetInspector.cs" />
@@ -526,12 +526,6 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="log4netPlastic">
-        <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
         <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -547,8 +541,14 @@
     <Reference Include="unityplastic">
         <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+        <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Tracker">
         <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>C:\Projects\yebois_framework\yebois_framework\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
