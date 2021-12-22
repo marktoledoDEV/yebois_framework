@@ -48,7 +48,7 @@ namespace YeBoisFramework.UI
             if(results.Count > 0) {
                 foreach(RaycastResult result in results) {
                     if(result.gameObject.CompareTag("mouseDetectable")){
-                        //Debug.Log("Hit " + result.gameObject.name); //uncomment for debugging purposes
+                        Debug.Log("Hit " + result.gameObject.name); //uncomment for debugging purposes
                         return result.gameObject;
                     }
 

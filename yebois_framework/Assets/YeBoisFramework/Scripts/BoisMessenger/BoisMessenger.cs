@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YeBoisFramework.Utility;
 
 namespace YeBoisFramework.BoisMessaging
 {
@@ -11,15 +12,15 @@ namespace YeBoisFramework.BoisMessaging
         private IBoisListener mCachedBoisListener;
         private Dictionary<string, BoisMethod> BoisMessageHandler = new Dictionary<string, BoisMethod>();
 
-        public BoisMessenger(IBoisListener listener)
+         public BoisMessenger(IBoisListener listener)
         {
             mCachedBoisListener = listener;
-            BoisMessagerManager.Instance.AddBaseMessenger(mCachedBoisListener, this);
+            ServiceLocator.Instance.GetService<BoisMessagerManager>().AddBaseMessenger(mCachedBoisListener, this);
         }
 
         ~BoisMessenger()
         {
-            BoisMessagerManager.Instance.RemoveBaseMessenger(mCachedBoisListener, this);
+            ServiceLocator.Instance.GetService<BoisMessagerManager>().RemoveBaseMessenger(mCachedBoisListener, this);
             mCachedBoisListener = null;
             BoisMessageHandler = null;
         }
@@ -38,17 +39,17 @@ namespace YeBoisFramework.BoisMessaging
 
         public void Call(string msg, IBoisListener listener, object parameters = null)
         {
-            BoisMessagerManager.Instance.SendMessage(msg, listener, parameters);
+            ServiceLocator.Instance.GetService<BoisMessagerManager>().SendMessage(msg, listener, parameters);
         }
 
         public void Call(string msg, GameObject targetGO, object parameters = null)
         {
-            BoisMessagerManager.Instance.SendMessage(msg, targetGO, parameters);
+            ServiceLocator.Instance.GetService<BoisMessagerManager>().SendMessage(msg, targetGO, parameters);
         }
 
         public void Broadcast(string msg, object parameters = null)
         {
-            BoisMessagerManager.Instance.SendMessageToAll(msg, parameters);
+            ServiceLocator.Instance.GetService<BoisMessagerManager>().SendMessageToAll(msg, parameters);
         }
 
         public void ReceiveMessage(string msg, object parameters = null)
