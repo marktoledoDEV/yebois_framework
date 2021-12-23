@@ -48,7 +48,7 @@ namespace YeBoisFramework.UI
             if(results.Count > 0) {
                 foreach(RaycastResult result in results) {
                     if(result.gameObject.CompareTag("mouseDetectable")){
-                        Debug.Log("Hit " + result.gameObject.name); //uncomment for debugging purposes
+                        //Debug.Log("Hit " + result.gameObject.name); //uncomment for debugging purposes
                         return result.gameObject;
                     }
 
@@ -81,6 +81,9 @@ namespace YeBoisFramework.UI
 
         private void callBoisMessageToListeners(string msg) {
             GameObject hitObject = fireRayCast();
+            if(hitObject == null ){
+                return;
+            }
             foreach(AbstractMouseInputListener listener in mBoisMouseListeners) {
                 Call(msg, listener.gameObject, hitObject);
             }
