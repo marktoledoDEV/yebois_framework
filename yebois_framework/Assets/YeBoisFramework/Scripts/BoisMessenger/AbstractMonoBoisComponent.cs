@@ -6,6 +6,7 @@ namespace YeBoisFramework.BoisMessaging
 {
     public abstract class AbstractMonoBoisComponent : MonoBehaviour, IBoisListener
     {
+        //[TODO] Have a list of listeners;
         protected BoisMessenger messenger;
 
         protected virtual void Awake()
