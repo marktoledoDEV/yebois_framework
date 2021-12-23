@@ -16,6 +16,9 @@ namespace YeBoisFramework.BoisMessaging
 
         public void CacheMethod(string msg, BoisMessenger.BoisMethod method)
         {
+            if(msg == "") {
+                return;
+            }
             messenger.CacheMethod(msg, method);
         }
 
