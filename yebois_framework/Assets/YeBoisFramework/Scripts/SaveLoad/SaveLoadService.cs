@@ -39,6 +39,11 @@ namespace YeBoisFramework.SaveLoad
         public string OnDeSerialize(string saveName, FileType fileType) {
             string filePath = createDirectoryFileText(saveName, fileType);
             // Open the stream and read it back.
+            if(!File.Exists(filePath)){
+                Debug.LogWarning("Unable to find file " + filePath);
+                return "";
+            }
+
             using (StreamReader streamReader = File.OpenText(filePath))
             {
                 string content = "";
